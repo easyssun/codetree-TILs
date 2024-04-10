@@ -26,7 +26,7 @@ def ready(order):
     wait_queue.put((1, 0, domain, pid))
 
     # 채점 대기 큐에 들어있는 url  따로 기록하는 자료구조
-    url_in_wait_queue.append(u0)
+    url_in_wait_queue.add(u0)
 
     # 도메인별 최근 채점 기록
     domain_info[domain] = [None, None]
@@ -50,7 +50,7 @@ def request(order):
     wait_queue.put((p, t, domain, pid))
     
     # 채점 대기 큐에 들어있는 url  따로 기록하는 자료구조
-    url_in_wait_queue.append(order[2])
+    url_in_wait_queue.add(order[2])
 
     # 도메인별 최근 채점 기록
     if domain not in domain_info:
@@ -117,7 +117,7 @@ def mark(order):
         domain_info[domain] = [current_t, None]
 
         # 채점 대기 큐에 들어있는 url  따로 기록하는 자료구조
-        url_in_wait_queue.remove(domain+"/"+str(pid))
+        url_in_wait_queue.discard(domain+"/"+str(pid))
 
         break
 
