@@ -89,7 +89,7 @@ def mark(order):
 
         # [2-1] 채점이 불가능하다면 queue에 넣어두고 다시 [1-1]로 넘어가기
         # [2-1-1] 해당 task의 도메인이 현재 채점 진행중인 도메인 중 하나라면 불가
-        if domain in marking_url:
+        if domain + "/" + str(pid) in marking_url:
             skip_problems.append((p, t, domain, pid))
             continue
 
@@ -203,7 +203,8 @@ if __name__ == "__main__":
         #     print("domain_info", domain_info)
         #     print("wait_queue: ", wait_queue.qsize())
         #     # print("markers: ", markers)
-        #     print("marking_url: ", marking_url)
+        # print("order: ", order)
+        # print("marking_url: ", marking_url)
         #     print("url_in_wait_queue:", url_in_wait_queue)
         #     print()
 
