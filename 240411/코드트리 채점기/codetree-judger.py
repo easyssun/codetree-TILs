@@ -180,7 +180,7 @@ if __name__ == "__main__":
     wait_queue = PriorityQueue()
 
     # 채점 대기 큐에 들어있는 url  따로 기록하는 자료구조
-    url_in_wait_queue = []
+    url_in_wait_queue = set()
 
     # Q번 읽기
     for idx in range(Q):
@@ -198,22 +198,3 @@ if __name__ == "__main__":
             terminate(order[1:])
         elif order_num == '500':
             inquiry(order[1:])
-
-        # if order_num != '500' and idx > Q - 6:
-        #     print("domain_info", domain_info)
-        #     print("wait_queue: ", wait_queue.qsize())
-        #     # print("markers: ", markers)
-        # print("order: ", order)
-        # print("marking_url: ", marking_url)
-        #     print("url_in_wait_queue:", url_in_wait_queue)
-        #     print()
-
-        
-
-    # 명령 읽을 때, 도메인 따로, 문제번호 따로 읽자
-    # 우선순위도 따로 읽자
-
-    # 채점기 상태 기록하는 자료구조 있어야 함.
-    # 도메인별 최근 채점 기록 기록하는 자료구조 있어야 함.
-        # 300 명령 할 때, 도메인에 대해 업데이트
-        # 400 명령 할 때, 도메인에 대해 업데이트
