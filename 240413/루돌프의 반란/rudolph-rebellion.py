@@ -102,7 +102,7 @@ for turn in range(M):
                         if len(already_santa) != 0:
                             queue.append(int(already_santa[0]))
 
-                        santas[s_idx] = [s_r + dr , s_c + dc]
+                        santas[str(s_idx)] = [s_r + dr , s_c + dc]
             # 밀려난 칸에 다른 산타가 없다면,
             else:
                 santas[str(target_s_idx)] = [target_s_x + s_dr , target_s_y + s_dc]
@@ -175,7 +175,7 @@ for turn in range(M):
                     dr, dc = s_new_dr / D, s_new_dc / D
                     while queue:
                         s_idx = queue.popleft()
-                        s_r, s_c = santas[s_idx]
+                        s_r, s_c = santas[str(s_idx)]
 
                         # 밀려난 위치가 게임판 밖이라면?
                         if s_r + dr <= 0 or s_r + dr > N or s_c + dc <= 0 or s_c + dc > N:
@@ -190,7 +190,7 @@ for turn in range(M):
                             if len(already_santa) != 0:
                                 queue.append(int(already_santa[0]))
 
-                            santas[s_idx] = [s_r + dr , s_c + dc]
+                            santas[str(s_idx)] = [s_r + dr , s_c + dc]
                 # 밀려난 칸에 산타가 없다면
                 # 밀려난 칸에 다른 산타가 없다면,
                 else:
