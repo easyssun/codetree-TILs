@@ -91,7 +91,7 @@ for turn in range(M):
 
                     # 밀려난 위치가 게임판 밖이라면?
                     if s_r + dr <= 0 or s_r + dr > N or s_c + dc <= 0 or s_c + dc > N:
-                        santas.pop(s_idx)
+                        santas.pop(str(s_idx))
                         santas_status[int(s_idx)] = -1
                         num_santa -= 1
 
